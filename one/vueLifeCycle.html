@@ -1,0 +1,76 @@
+<html>
+    <head>
+            <meta charset="utf-8">
+            <title>vue 生命周期</title>
+    </head>
+
+    <div id="app">
+        <p> vue 的生命周期过程：</p>
+        <p>created : 实例创建完成后调用</p>
+        <p> mounted ： el挂载完成后调用</p>
+        <p> beforeDestroy ： 实例销毁之前调用</p>       
+        </br>    
+        <p>详细console打印, F12查看</p>  
+        </br>
+
+        <h1>代码</h1>
+        <textarea rows=30 cols=70>
+            var app = new Vue({
+                el:  '#app',
+                data: {
+                    param01: 2,
+                    phone: 18320928860,
+                    author: 'quinn',
+                    name : '贾志强'
+
+            },
+            // 创建完vue实例调用， 用于初始化数据
+            created: function() {
+                console.log(this.param01)
+            },
+            // 挂载到实例后调用，代表el 挂载完成
+            mounted: function() {
+                console.log(this.$el)
+            },
+            // 实例销毁前调用
+            beforeDestroy: function() {
+                console.log("实例销毁前调用： " +this.$el);
+            }
+
+        });
+    
+         </textarea>
+        </br>
+
+        <h7> author: {{author}}, name : {{name}}, phone：{{phone}} </h7>
+    </div>
+    <body>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script>
+        var app = new Vue({
+            el:  '#app',
+            data: {
+                param01: 2,
+                phone: 18320928860,
+                author: 'quinn',
+                name : '贾志强'
+
+            },
+            // 创建完vue实例调用， 用于初始化数据
+            created: function() {
+                console.log(this.param01)
+            },
+            // 挂载到实例后调用，代表el 挂载完成
+            mounted: function() {
+                console.log(this.$el)
+            },
+            // 实例销毁前调用
+            beforeDestroy: function() {
+                console.log("实例销毁前调用： " +this.$el);
+            }
+
+        });
+    
+    </script>
+
+</html>
