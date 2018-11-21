@@ -1,0 +1,54 @@
+<html>
+    <head>
+            <meta charset="utf-8">
+            <title>组件内部方法使用</title>
+    </head>
+    <body>
+        <div id="app">
+            <mycomponent></mycomponent>
+            <mycomponent></mycomponent>
+            <mycomponent></mycomponent>
+
+        </div>
+
+        <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+        <script>
+        
+
+        Vue.component(
+            'mycomponent',
+            {
+                template    : '<button @click="counter++" > {{counter}} </button>',
+                data:function()
+                {
+                    return {
+                        counter: 0
+                    }
+                },
+                methods:
+                {
+                    onclick:function()
+                    {
+                        console.log(111111);
+                        this.counter ++;
+                    }
+                }
+            }
+        );
+
+
+         var app = new Vue({
+                el: '#app',
+                data:{
+                    
+                },
+                methods:{
+
+                },
+                computed:{
+                    
+                }
+            });
+        </script>
+    </body>
+</html>

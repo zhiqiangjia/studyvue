@@ -1,0 +1,48 @@
+<html>
+    <head>
+            <meta charset="utf-8">
+            <title>表单</title>
+    </head>
+    <body>
+        <div id="app">
+            <input type="text" v-model="message" placeholder="输入...">
+            <textarea type="text" v-model="text" placeholder="输入..."> </textarea>
+
+            <p>输入的内容{{message}}</p>
+            <p>输入的内容是： </p>
+            <p style="white-space: pre;">{{text}}</p>
+            <div @click="handle">
+                <input type="radio" :checked="picked" v-model='qdModel' name="qd" value="html" id="html">
+                <label for="html">html</label>
+                <input type="radio" :checked="picked"  v-model='qdModel' name="qd" value="js" id="js">
+                <label for="js">javascript</label>
+                <input type="radio" :checked="picked"  v-model='qdModel' name="qd" value="css" id="css">
+                <label for="css">css</label>
+                <br>
+                <p>你的选项是{{qdModel}}</p>
+            </div>
+           
+        </div>
+
+        <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+        <script>
+         var app = new Vue({
+                el: '#app',
+                data:{
+                    message : '',
+                    text: '',
+                    picked : 'js',
+                    qdModel:''
+                },
+                methods:{
+                    handle:function(){
+                        this.picked = this.qdModel;
+                    }
+                },
+                computed:{
+                    
+                }
+            });
+        </script>
+    </body>
+</html>
