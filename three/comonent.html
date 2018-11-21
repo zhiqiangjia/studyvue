@@ -1,0 +1,57 @@
+<html>
+    <head>
+            <meta charset="utf-8">
+            <title>compoment 使用样式</title>
+            <style>
+                .active
+                { 
+                background-color:yellow;
+                } 
+                .font {
+                    font-weight: 200
+                }
+            </style>
+    </head> 
+   
+    <body>
+        <div id="app">
+            <mycomponent :class="activeCls">
+                
+            </mycomponent>
+            <button  v-on:click="change">切换</button>
+        </div>
+
+        <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+        <script>
+
+            Vue.component('mycomponent', {
+                template: '<p class="article> 一些文本</p>'
+            });
+
+            var vue = new Vue({
+                el: '#app', 
+                data:
+                {
+                    isActive : true,
+                    activeCls: 'active',
+                    fontCls: 'font'
+                },
+                methods:{
+                    change:function() {
+                        this.isActive = !this.isActive;
+                        console.log(this.isActive );
+                    }
+                },
+                computed:{
+                    multiClass:function(){
+                        return {
+                            active: this.isActive && !this.error,
+                            font: !this.isActive
+                        }
+                    }
+                }
+
+            });
+        </script>
+    </body>
+</html>
