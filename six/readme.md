@@ -49,7 +49,14 @@ Vue.component(
 ```
 
 ### props传递数据
+props 定义是： 父组件包含子组件，父组件向子组件传递信息的过程，是用的props
+
+传输的数据类型
+- 字符串数据
+- 对象
 
 ```
+# 父级属性定义
 
+<componentName attrname="">
 ```

@@ -1,0 +1,29 @@
+<html>
+    <head>
+            <meta charset="utf-8">
+            <title>props study 1</title>
+    </head>
+    <body>
+        <div id="app">
+            <mycomponent message="来自父级组件的数据", warningText="提示信息"></mycomponent>
+        </div>
+
+        <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+        <script>
+
+        Vue.component(
+            'mycomponent',
+            {
+                props: ['message', 'warningText'],
+                template: '<div>{{ message }}, {{warningText}}</div>'
+            }
+        );
+
+         var app = new Vue({
+                el: '#app',
+                data:{
+                }
+            });
+        </script>
+    </body>
+</html>
