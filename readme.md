@@ -20,11 +20,11 @@
 - bind
 - class
 - style
-//TODO
 #### four
 内置指令
-- 
-//TODO
+v-for; v-if; 
+// 数组常用操作待补充 //TODO
+
 ### five 
 表单和v-model
 //TODO
