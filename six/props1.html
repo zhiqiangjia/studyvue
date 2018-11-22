@@ -2,26 +2,32 @@
     <head>
             <meta charset="utf-8">
             <title>props study 1</title>
+            <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+
     </head>
     <body>
         <div id="app">
-            <mycomponent message="来自父级组件的数据", warningText="提示信息"></mycomponent>
+            <el-input v-model="parentMessage"></el-input>
+            <mycomponent message="来自父级组件的数据" :param1="parentMessage" warningText="提示信息"></mycomponent>
         </div>
 
         <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+        <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+
         <script>
 
         Vue.component(
             'mycomponent',
             {
-                props: ['message', 'warningText'],
-                template: '<div>{{ message }}, {{warningText}}</div>'
+                props: ['warningText', 'message', 'param1'],
+                template: '<div> {{ message }}, {{ warningText }}, {{param1}} </div>'
             }
         );
 
          var app = new Vue({
                 el: '#app',
                 data:{
+                    parentMessage: ''
                 }
             });
         </script>

@@ -52,11 +52,24 @@ Vue.component(
 props 定义是： 父组件包含子组件，父组件向子组件传递信息的过程，是用的props
 
 传输的数据类型
-- 字符串数据
-- 对象
+- 字符串数据 (普通模式)
+- 对象 (通过 v-bind)
 
 ```
 # 父级属性定义
 
 <componentName attrname="">
+
+ Vue.component(
+            'mycomponent',
+            {   
+                // 传递
+                props: ['warningText', 'message', 'param1'],
+                ..
+            }
+        );
+
+
+':attributeName=""' :代表通过v-bind来动态绑定props
+通过v-bind;是支持传递对象，数组，布尔,数字；
 ```
